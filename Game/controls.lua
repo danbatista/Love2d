@@ -1,4 +1,4 @@
-require "player"
+require "./player"
 
 controls = {}
 function controls.load()
