@@ -1,0 +1,1 @@
+Put this in "%appdata%\Sublime Text 3\Packages\User" or just copy and paste it as a "New Build System..." under "Tools".
