@@ -1,0 +1,4 @@
+1. Add FPS counter
+2. Make the object draggable
+3. Load a picture as the object
+4. Play a song maybe?
