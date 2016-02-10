@@ -1,5 +1,5 @@
 require "player"
-
+require "audio"
 controls = {}
 function controls.update()
 	if love.keyboard.isDown("q") then
@@ -19,5 +19,9 @@ function controls.update()
 	end
 	if love.keyboard.isDown("d") then
 		player.x = player.x + player.speed
+	end
+
+	if love.keyboard.isDown("f") then
+		audio.ItsMeMario:play()
 	end
 end

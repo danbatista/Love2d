@@ -2,10 +2,12 @@ require "conf"
 require "player"
 require "controls"
 require "counters"
+require "audio"
 
 function love.load( ... )
 	print("Loading...")
 	player.load()
+	audio.load()
 	print("Done Loading!")
 end
 
