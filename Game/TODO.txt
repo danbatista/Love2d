@@ -1,5 +1,7 @@
 TODO:
- 
+
+Add Ground
+Add physics
 Make the object draggable
 Play a song maybe?
 
