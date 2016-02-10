@@ -1,17 +1,23 @@
-require "./player"
+require "player"
 
 controls = {}
-function controls.load()
-	function love.keypressed(key, isrepeat)
-		love.keyboard.setKeyRepeat(true)
-		if key == "w" then 
-			player.y = player.y - 2
-		elseif key == "s" then
-			player.y = player.y + 2
-		elseif key == "a" then
-			player.x = player.x - 2
-		elseif key == "d" then
-			player.x = player.x + 2
-		end
+function controls.update()
+	if love.keyboard.isDown("q") then
+		player.rotate = player.rotate - .01
+	end
+		if love.keyboard.isDown("e") then
+		player.rotate = player.rotate + .01
+	end
+	if love.keyboard.isDown("w") then
+		player.y = player.y - player.speed
+	end
+	if love.keyboard.isDown("s") then
+		player.y = player.y + player.speed
+	end
+	if love.keyboard.isDown("a") then
+		player.x = player.x - player.speed
+	end
+	if love.keyboard.isDown("d") then
+		player.x = player.x + player.speed
 	end
 end

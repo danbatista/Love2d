@@ -1,5 +1,12 @@
-1. Add FPS counter
-2. Make the object draggable
-3. Load a picture as the object
-4. Play a song maybe?
-5. Make a "player.draw()" function for the player table
+TODO:
+ 
+Make the object draggable
+Play a song maybe?
+
+
+DONE:
+
+Add FPS counter
+Load a picture as the object
+Make a "player.draw()" function for the player table
+
