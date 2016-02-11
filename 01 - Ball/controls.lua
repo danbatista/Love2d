@@ -2,6 +2,8 @@ require "objects"
 
 local width 	= love.graphics.getWidth()
 local height 	= love.graphics.getHeight()
+local mouseX	= love.mouse.getX()
+local mouseY 	= love.mouse.getY()
 
 controls = {}
 function controls.update(dt)
@@ -21,9 +23,13 @@ function controls.update(dt)
 	if love.keyboard.isDown("r") then					--Resetting the scene
 		print("Resetting...")
 		objects.player.body:setPosition(width/2, height/2)
-		objects.player.body:setLinearVelocity(0, 0) 
-
-		objects.blocks.body:setPosition(200, 550)
-		objects.blocks.body:setLinearVelocity(0, 0) 
+		objects.player.body:setLinearVelocity(0, 0) 	
 	end
+		function love.mousepressed( mouseX, mouseY, button, istouch ) -- This is so that we can place the block back down
+		if button == 1 then
+			objects.blocks.body:setPosition(mouseX, mouseY)
+			objects.blocks.body:setLinearVelocity(1, 0)
+		end
+	end
+
 end

@@ -22,7 +22,7 @@ function objects.load( ... )
 
 	--Creating blocks
 	objects.blocks 			= 	{}
-	objects.blocks.body 	= 	love.physics.newBody(world.world, 200, 550, "dynamic")
+	objects.blocks.body 	= 	love.physics.newBody(world.world, 100, 550, "dynamic")
 	objects.blocks.shape 	= 	love.physics.newRectangleShape(100, 50)
 	objects.blocks.fixture 	= 	love.physics.newFixture(objects.blocks.body, objects.blocks.shape)
 end
