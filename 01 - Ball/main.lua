@@ -4,7 +4,6 @@ require "counters"
 require "objects"
 require "world"
 
-
 function love.load()
 	world.load()
 	objects.load()
@@ -17,6 +16,7 @@ function love.update(dt)
 end
 
 function love.draw( ... )
-	counters.draw()
 	objects.draw()
+	counters.draw()
+	
 end

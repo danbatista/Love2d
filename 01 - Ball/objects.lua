@@ -2,7 +2,6 @@ require "world"
 
 local width 	= love.graphics.getWidth()
 local height 	= love.graphics.getHeight()
-
 objects = {}
 
 function objects.load( ... )
@@ -15,8 +14,9 @@ function objects.load( ... )
 
 	--Creating the ball
 	objects.player 			= 	{}
+	objects.player.image	=	love.graphics.newImage("res/Pacman.png")
 	objects.player.body 	= 	love.physics.newBody(world.world, width/2, height/2, "dynamic") --place the body in the center of the world and make it dynamic, so it can move around
-	objects.player.shape 	= 	love.physics.newCircleShape(20)	-- The player will have a radius of 20px
+	objects.player.shape 	= 	love.physics.newCircleShape(75)	-- The player will have a radius of 20px
 	objects.player.fixture 	= 	love.physics.newFixture(objects.player.body, objects.player.shape) --attach shape of player to the body
 	objects.player.fixture:setRestitution(0.9) --let the player bounce
 
@@ -32,9 +32,12 @@ function objects.draw( ... )
 	love.graphics.setColor(72, 160, 14) -- set the drawing color to green for the ground
 	love.graphics.polygon("fill", objects.ground.body:getWorldPoints(objects.ground.shape:getPoints())) -- draw a "filled in" polygon using the ground's coordinates
 
+	
 	--Drawing the player
-	love.graphics.setColor(193, 47, 14) --set the drawing color to red for the ball
-	love.graphics.circle("fill", objects.player.body:getX(), objects.player.body:getY(), objects.player.shape:getRadius())
+	love.graphics.setColor(255, 240, 1, 255) --set the drawing color to red for the ball
+	love.graphics.draw(objects.player.image, objects.player.body:getX(), objects.player.body:getY(), r --[[objects.player.body:getAngle()]],  1, 1, objects.player.image:getWidth()/2, objects.player.image:getHeight()/2)
+	--love.graphics.circle("fill", objects.player.body:getX(), objects.player.body:getY(), objects.player.shape:getRadius())
+	
 
 	--Drawing the blocks
 	love.graphics.setColor(50, 50, 50) -- set the drawing color to grey for the blocks
