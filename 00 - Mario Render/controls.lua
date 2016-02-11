@@ -1,6 +1,5 @@
 require "player"
 require "audio"
-local dt = love.timer.getAverageDelta( )
 
 controls = {}
 function controls.update(dt)

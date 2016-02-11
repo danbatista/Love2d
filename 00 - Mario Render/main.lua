@@ -15,7 +15,7 @@ end
 
 function love.update(dt)
 	controls.update(dt)
-	counters.update()
+	counters.update(dt)
 end
 
 function love.draw( ... )
