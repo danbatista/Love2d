@@ -1,5 +1,5 @@
 TODO:
-
+Google and apply: "kinetic physics forumlas"
 Add Ground
 Add physics
 Make the object draggable
