@@ -18,7 +18,7 @@ function objects.load( ... )
 	objects.player.body 	= 	love.physics.newBody(world.world, width/2, height/2, "dynamic") --place the body in the center of the world and make it dynamic, so it can move around
 	objects.player.shape 	= 	love.physics.newCircleShape(75)	-- The player will have a radius of 20px
 	objects.player.fixture 	= 	love.physics.newFixture(objects.player.body, objects.player.shape) --attach shape of player to the body
-	objects.player.fixture:setRestitution(0.9) --let the player bounce
+	objects.player.fixture:setRestitution(1.0) --let the player bounce
 
 	--Creating blocks
 	objects.blocks 			= 	{}
@@ -34,7 +34,7 @@ function objects.draw( ... )
 
 	
 	--Drawing the player
-	love.graphics.setColor(255, 240, 1, 255) --set the drawing color to red for the ball
+	love.graphics.setColor(255, 240, 1, 255) --set the drawing color to yellow for the ball
 	love.graphics.draw(objects.player.image, objects.player.body:getX(), objects.player.body:getY(), r --[[objects.player.body:getAngle()]],  1, 1, objects.player.image:getWidth()/2, objects.player.image:getHeight()/2)
 	--love.graphics.circle("fill", objects.player.body:getX(), objects.player.body:getY(), objects.player.shape:getRadius())
 	
