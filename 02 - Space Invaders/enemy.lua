@@ -26,10 +26,6 @@ function enemy.update(dt)
 
     	-- let them fall down slowly
     	v.y = enemy.body:setLinearVelocity(0, 100) 
-
-    	if v.y = player.body:getY() then 
-    		print("You Lose")
-    	end 
 	end
 end
 
@@ -37,4 +33,7 @@ function enemy.draw( ... )
 	for i,v in ipairs(enemies) do
     	love.graphics.draw(enemy.image, enemy.body:getX(), enemy.body:getY(), r, scale, scale, enemy.image:getWidth()/1.5, enemy.image:getHeight()/1.5)
 	end
+	if enemy.body:getY() > player.body:getY() then
+   		love.graphics.print("You Lose", width/2, height/2)
+   	end 
 end

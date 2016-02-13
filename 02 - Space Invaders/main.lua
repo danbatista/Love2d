@@ -1,4 +1,5 @@
 require "controls"
+require "counters"
 require "enemy"
 require "player"
 require "world"
@@ -16,6 +17,7 @@ function love.update(dt)
 end
 
 function love.draw( ... )
+	counters.draw()
 	player.draw()
 	enemy.draw()
 	world.draw()
