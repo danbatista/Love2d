@@ -14,6 +14,7 @@ function love.update(dt)
 	controls.update(dt)
 	world.world:update(dt)
 	enemy.update(dt)
+	player.update(dt)
 end
 
 function love.draw( ... )

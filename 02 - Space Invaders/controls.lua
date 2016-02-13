@@ -1,4 +1,5 @@
 require "player"
+
 local width 	= love.graphics.getWidth()
 local height 	= love.graphics.getHeight()
 
@@ -10,6 +11,11 @@ function controls.update(dt)
 		player.body:applyForce(50, 0)
 	else
 		player.body:setLinearVelocity(0, 0)				--If none of the keys work then don't move	
+	end
+
+	if love.keyboard.isDown(" ") then
+		player.shoot()
+		player.shot:applyForce(0, -20)
 	end
 	
 	if love.keyboard.isDown("r") then					--Resetting the scene
