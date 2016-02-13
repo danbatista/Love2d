@@ -6,10 +6,6 @@ local height 	= love.graphics.getHeight()
 
 
 function player.load( ... )
- 	player.x 		= 300
- 	player.y 		= 450
- 	player.speed 	= 100
-
  	--Creating the player
  	player.image 	= love.graphics.newImage("res/Player.png")
  	player.body 	= love.physics.newBody(world.world, width/2, height/1.11, "dynamic")
