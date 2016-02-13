@@ -27,8 +27,12 @@ function controls.update(dt)
 	end
 		function love.mousepressed( mouseX, mouseY, button, istouch ) -- This is so that we can place the block back down
 		if button == 1 then
-			objects.blocks.body:setPosition(mouseX, mouseY)
-			objects.blocks.body:setLinearVelocity(1, 0)
+			block 			= 	{}
+			block.body 		= 	love.physics.newBody(world.world, mouseX, mouseY, "dynamic")
+			block.shape 	= 	love.physics.newRectangleShape(100, 50)
+			block.fixture 	= 	love.physics.newFixture(block.body, block.shape)
+			table.insert(objects.blocks, block)
+			block.body:setLinearVelocity(1, 0)
 		end
 	end
 

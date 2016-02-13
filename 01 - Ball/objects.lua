@@ -21,10 +21,12 @@ function objects.load( ... )
 	objects.player.fixture:setRestitution(1.0) --let the player bounce
 
 	--Creating blocks
-	objects.blocks 			= 	{}
-	objects.blocks.body 	= 	love.physics.newBody(world.world, 100, 550, "dynamic")
-	objects.blocks.shape 	= 	love.physics.newRectangleShape(100, 50)
-	objects.blocks.fixture 	= 	love.physics.newFixture(objects.blocks.body, objects.blocks.shape)
+	objects.blocks 	= 	{}
+	block 			= 	{}
+	block.body 		= 	love.physics.newBody(world.world, 100, 550, "dynamic")
+	block.shape 	= 	love.physics.newRectangleShape(100, 50)
+	block.fixture 	= 	love.physics.newFixture(block.body, block.shape)
+	table.insert(objects.blocks, block)
 end
 
 function objects.draw( ... )
@@ -41,5 +43,9 @@ function objects.draw( ... )
 
 	--Drawing the blocks
 	love.graphics.setColor(50, 50, 50) -- set the drawing color to grey for the blocks
-  	love.graphics.polygon("fill", objects.blocks.body:getWorldPoints(objects.blocks.shape:getPoints()))
+  	for _, block in pairs(objects.blocks) do
+		love.graphics.polygon("fill", block.body:getWorldPoints(block.shape:getPoints()))
+  	end
+
+  	
 end
