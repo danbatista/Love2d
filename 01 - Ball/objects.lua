@@ -22,11 +22,11 @@ function objects.load( ... )
 
 	--Creating blocks
 	objects.blocks 	= 	{}
-	block 			= 	{}
+	--[[block 			= 	{}
 	block.body 		= 	love.physics.newBody(world.world, 100, 550, "dynamic")
 	block.shape 	= 	love.physics.newRectangleShape(100, 50)
 	block.fixture 	= 	love.physics.newFixture(block.body, block.shape)
-	table.insert(objects.blocks, block)
+	table.insert(objects.blocks, block)]]--
 end
 
 function objects.draw( ... )
